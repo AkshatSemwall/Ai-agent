@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Research Agent Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>AI Research Agent Dashboard</h1>
+      <p>Submit a research query and receive a structured summary, key points, and confidence score.</p>
+    </header>
+
+    <section class="panel">
+      <label for="query">Research question</label>
+      <textarea id="query" placeholder="Enter your research query here..." rows="4"></textarea>
+      <button id="submit">Analyze</button>
+    </section>
+
+    <section id="output" class="panel hidden">
+      <h2>Analysis Result</h2>
+      <div class="output-row"><strong>Query:</strong> <span id="out-query"></span></div>
+      <div class="output-row"><strong>Summary:</strong></div>
+      <p id="out-summary"></p>
+      <div class="output-row"><strong>Key Points:</strong></div>
+      <ul id="out-keypoints"></ul>
+      <div class="output-row"><strong>Confidence:</strong> <span id="out-confidence"></span></div>
+    </section>
+
+    <section id="error" class="panel hidden error-panel"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

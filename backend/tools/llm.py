@@ -28,9 +28,9 @@ def call_groq(prompt: str, max_tokens: int = 700) -> str:
     )
     response.raise_for_status()
     body = response.json()
-    message = body.get("choices", [])[0].get("message", {})
+    choice = body.get("choices", [])[0]
+    message = choice.get("message", {}) if isinstance(choice, dict) else {}
     if isinstance(message, dict):
         return message.get("content", "").strip()
 
     return str(body)
-   
